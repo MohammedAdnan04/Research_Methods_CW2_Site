@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHS COVID-19 Emergency Admissions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">NHS Data Visualisation</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#visualization">Interactive Dashboard</a></li>
+            <li><a href="#report">Research Report</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>NHS Emergency Admissions During COVID-19</h1>
+            <p class="subtitle">An interactive exploration of the lockdown impact on 18 ICD-10 diagnostic
+                chapters.</p>
+            <div class="user-details glass-panel">
+                <h3>Mohammed Adnan</h3>
+                <p><strong>ID:</strong> 20806056</p>
+                <p><strong>Programme:</strong> MSc in Computer Science (Artificial Intelligence)</p>
+                <p><strong>Module:</strong> COMP4037 Research Methods</p>
+                <p><strong>Module Convenor:</strong> Robert Laramee</p>
+                <p><strong>Coursework 2:</strong> Data Visualization</p>
+            </div>
+            <a href="#visualization" class="btn-primary">View Dashboard</a>
+        </div>
+        <div class="hero-bg-glow"></div>
+    </header>
+
+    <section id="visualization" class="dashboard-section">
+        <h2 class="section-title">Interactive Dashboard</h2>
+        <p class="section-desc">Explore the heatmap below. Use the filters to sort, isolate thresholds, or focus on a
+            specific year.</p>
+
+        <div class="dashboard-container">
+            <div class="iframe-wrapper glass-panel">
+                <iframe src="visualization.html" title="NHS Data Visualization"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="report" class="report-section">
+        <div class="container">
+            <h2 class="section-title">Research Report</h2>
+            <div class="report-content glass-panel">
+                <h3>Research Question</h3>
+                <p>Which NHS emergency hospital admission categories were most suppressed by the COVID-19 lockdown
+                    (2020/21), and did they recover to pre-pandemic levels by 2022/23?</p>
+
+                <h3>Visual Design Type & Tool</h3>
+                <p><strong>Annotated Diverging Heatmap:</strong> An advanced interactive visualization where the colour
+                    of each cell shows the percentage change in emergency admissions compared to the 2018/19 baseline.
+                    The rows are sorted by the 2020/21 lockdown impact, so the most affected categories appear at top
+                    which makes it easy to spot the pattern immediately.</p>
+                <p><strong>Tool Used:</strong> Python 3 with Plotly library was used to build this interactive
+                    standalone HTML visualization. The diagram has 3 dropdown filters built in and hover tooltips that
+                    show detailed information for each cell.</p>
+
+                <h3>Focus Cohort</h3>
+                <p>The visualization covers financial years 2019/20 through to 2022/23 with 2018/19 used as the baseline
+                    for comparison. All age groups are included from age 0 to 90+ and the hover tooltip on each cell
+                    shows the top 3 age groups contributing to admissions in that particular category and year. The data
+                    covers all genders across England.</p>
+
+                <h3>Variables and Why Chosen</h3>
+                <p>The main variable chosen is <strong>Emergency Hospital Admissions</strong> which is the finished
+                    admission episodes classified as emergency. I chose this specific metric rather than total
+                    admissions because it directly captures unplanned urgent demand, which is the most sensitive
+                    indicator of how COVID-19 disrupted normal healthcare behavior in population. If someone stops going
+                    to hospital in an emergency it means something significantly changed in their access or behavior.
+                </p>
+                <p>The second variable is the <strong>ICD-10 diagnostic chapter</strong> which groups related diagnosis
+                    codes into 18 clinically meaningful categories like Respiratory, Mental & Behavioral, Circulatory
+                    and so on. Human readable descriptions are shown throughout, not just codes.</p>
+                <p>The third variable is <strong>percentage change</strong> against the 2018/19 baseline which is a
+                    derived metric I calculated to allow fair comparison across chapters that have very different
+                    absolute sizes.</p>
+
+                <h3>Visual Mappings</h3>
+                <p>The x-axis shows the financial year from 2019/20 to 2022/23. The y-axis shows the ICD-10 diagnostic
+                    chapter at Primary Diagnosis Summary level which is one level above the 3-character ICD codes, and
+                    it is sorted by the 2020/21 lockdown drop so worst affected chapters appear at top.</p>
+                <p>The colour encodes the percentage change using a diverging scale where deep red means a large
+                    decrease compared to baseline and deep blue means a large increase, with dark neutral in the middle
+                    representing near zero change. The exact percentage value is also printed inside each cell so reader
+                    does not have to guess from colour alone.</p>
+
+                <h3>Interactive Features</h3>
+                <p>The hierarchy is shown through the y-axis grouping where individual diagnosis codes are aggregated up
+                    to chapter level. Three interactive filters are available:</p>
+                <ul>
+                    <li><strong>Sort Order:</strong> Change how chapters are ranked.</li>
+                    <li><strong>Drop Threshold:</strong> Isolate only the most impacted chapters.</li>
+                    <li><strong>Year Focus:</strong> Hide all other years and show only the selected year in full
+                        detail.</li>
+                </ul>
+                <p>On hovering any cell a tooltip appears showing the exact emergency admissions count, percentage
+                    change, the 2018/19 baseline figure, total admissions, and the top 3 age groups by volume.</p>
+
+                <h3>Unique Observation</h3>
+                <p>Respiratory emergency admissions fell by 63% in 2020/21 compared to 2018/19 baseline, which is the
+                    largest single year collapse across all 18 ICD-10 chapters. In absolute terms this dropped from
+                    around 221,291 admissions to just 80,819 which is significant. Infectious & Parasitic diseases also
+                    dropped by 44% and Injuries & Poisoning fell 14% which all makes sense because lockdown reduced
+                    community transmission and physical activity outside home.</p>
+                <p>Most of the chapters show a clear recovery pattern in 2021/22 and 2022/23 which is visible as the red
+                    columns gradually turning blue as you read left to right. But the most interesting finding which i
+                    believe is the unique observation here is <strong>Mental & behavioral disorders</strong>. It is the
+                    only chapter that keeps getting worse after lockdown ends, reaching 31% below the 2018/19 baseline
+                    by 2022/23. Every other chapter recovers but this one continues declining year on year. This could
+                    suggest that mental health patients shifted to community-based care permanently or there is a
+                    growing crisis of unmet need that is simply not showing up in emergency admissions anymore. Either
+                    way this pattern is not visible from raw numbers alone and only becomes clear through this
+                    visualization.</p>
+
+                <h3>Data Preparation</h3>
+                <p>First i loaded the Primary Diagnosis Summary sheet from all 5 NHS England HES Excel files covering
+                    financial years 2018/19 to 2022/23. One thing i noticed during preprocessing is that the older files
+                    from 2018/19 and 2019/20 have the header row at index 10 while the newer files from 2020/21 onwards
+                    have it at index 9, so i handled this difference explicitly in the code.</p>
+                <p>Another major issue was that older files use broad ICD codes like E15-E90 as a single row while newer
+                    files split the same range into multiple granular codes like E15-E16 and E20-E35 separately. To
+                    handle both styles consistently i built a prefix based mapping function that assigns chapter based
+                    on the first letter of the code regardless of how granular it is. After mapping i aggregated all
+                    individual codes to chapter level by summing emergency admissions. Then i calculated percentage
+                    change against the 2018/19 financial year as the baseline. Finally i sorted chapters by their
+                    2020/21 percentage change in ascending order so the most suppressed categories appear at the top of
+                    the visualization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="resources-section">
+        <div class="container center-text">
+            <h2 class="section-title">Resources & Links</h2>
+            <p>Access the source code from Google Colab and the interactive diagram hosted on GitHub Pages.</p>
+            <div class="resource-links">
+                <a href="https://colab.research.google.com/drive/1UUhS-AGn_aNzYC0PKXkq67srJGp-86U-?usp=sharing"
+                    target="_blank" class="btn-secondary">View Source Code (Google Colab)</a>
+                <a href="https://mohammedadnan04.github.io/Research_Methods_CW2/" target="_blank"
+                    class="btn-secondary">View Interactive Diagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mohammed Adnan | COMP4037 Research Methods CW2</p>
+    </footer>
+</body>
+
+</html>

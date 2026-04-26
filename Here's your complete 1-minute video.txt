@@ -1,0 +1,81 @@
+Here's your complete 1-minute video script with timestamps:
+
+---
+
+## 🎬 Video Script — 1 Minute
+
+---
+
+**[0:00 – 0:08] — Open with the full chart visible**
+
+> "This visualization explores NHS emergency hospital admissions during the COVID-19 pandemic. The research question is — which diagnosis categories were most suppressed by the 2020/21 lockdown, and did they recover by 2022/23?"
+
+---
+
+**[0:08 – 0:18] — Point to the heatmap overall**
+
+> "This is an interactive diverging heatmap. Each row is an ICD-10 diagnostic chapter — that's a clinical grouping of related diagnoses. Each column is a financial year. The colour shows percentage change versus the 2018/19 pre-pandemic baseline. Red means admissions dropped, blue means they increased."
+
+---
+
+**[0:18 – 0:27] — Point to Respiratory row**
+
+> "The rows are sorted by lockdown impact. You can see Respiratory at the top — it collapsed by 63% in 2020/21. That's the largest single drop across all 18 chapters. Infectious and Parasitic dropped 44%. These fell because lockdown reduced community transmission."
+
+---
+
+**[0:27 – 0:35] — Use Filter ① Sort Order**
+
+> "The first filter lets me change the sort order. I can sort alphabetically or by worst recovery in 2022/23. Let me switch to worst recovery — now Mental and Behavioural moves to the top, which leads to my unique observation."
+
+*[click Worst Recovery]*
+
+---
+
+**[0:35 – 0:43] — Point to Mental & Behavioural, use Filter ③ Year Focus**
+
+> "Mental and Behavioural is the only chapter still declining in 2022/23, reaching minus 31% — every other chapter recovered but this one kept getting worse. Let me use the Year Focus filter to isolate 2022/23 to see this clearly."
+
+*[click Year Focus → 2022/23]*
+
+> "You can see Mental and Behavioural is still deep red while most others are blue — that's the structural shift I'm highlighting."
+
+---
+
+**[0:43 – 0:50] — Use Filter ② Drop Threshold**
+
+> "The second filter isolates only the most impacted chapters. If I select dropped more than 10% — we're left with 8 chapters that were significantly suppressed by lockdown."
+
+*[click Drop Threshold → >10%]*
+
+---
+
+**[0:50 – 0:57] — Hover over a cell**
+
+> "Every cell is interactive. Hovering gives exact admissions count, percentage change, the baseline figure, and the top age groups affected. This level of detail is not visible in a static chart."
+
+*[hover over Respiratory 2020/21 cell]*
+
+---
+
+**[0:57 – 1:00] — End**
+
+> "The data is from NHS England HES, financial years 2018/19 to 2022/23, covering all ages and genders across England."
+
+---
+
+## 📋 Quick Reference Card
+
+| Time | Action | What to show on screen |
+|---|---|---|
+| 0:00–0:08 | Speak intro | Full heatmap visible |
+| 0:08–0:18 | Point to rows/colours | Full heatmap, gesture at colours |
+| 0:18–0:27 | Point to top rows | Respiratory and Infectious rows |
+| 0:27–0:35 | Click Sort → Worst Recovery | Filter ① dropdown |
+| 0:35–0:43 | Click Year Focus → 2022/23 | Filter ③ dropdown |
+| 0:43–0:50 | Click Threshold → >10% | Filter ② dropdown |
+| 0:50–0:57 | Hover Respiratory 2020/21 | Tooltip visible |
+| 0:57–1:00 | Speak outro | Full chart visible |
+
+---
+
